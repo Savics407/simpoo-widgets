@@ -2,7 +2,7 @@
   "version": "v1",
   "packages": {
     "@simpoobusiness/sdk": {
-      "signature": "3306c37cc19b809520cccd72d899f987",
+      "signature": "204d8303cc828a2880fa130de13b7c5a",
       "file": true,
       "replaced": "^1.0.2"
     }
