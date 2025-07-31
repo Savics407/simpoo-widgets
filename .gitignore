@@ -10,6 +10,10 @@ dist/
 .esm/
 .cjs/
 
+# next.js
+/.next/
+/out/
+
 # TypeScript build cache
 *.tsbuildinfo
 
@@ -24,3 +28,4 @@ dist/
 .idea/
 .DS_Store
 .yalc
+.next

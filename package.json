@@ -12,7 +12,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@simpoobusiness/sdk": "^1.0.1",
+    "@simpoobusiness/sdk": "^1.0.2",
     "@tailwindcss/postcss": "^4.1.11",
     "next": "^15.4.1",
     "react": "^19.1.0",

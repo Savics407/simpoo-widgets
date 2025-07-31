@@ -10,6 +10,13 @@ export default function Page() {
       <div className="flex flex-col justify-center items-center gap-4">
         <h2 className="text-2xl">Inventory table widget</h2>
         <InventoryTable />
+
+        <div
+          className="fb-comments"
+          data-href="https://simpoobusiness.com"
+          data-width=""
+          data-numposts="5"
+        ></div>
       </div>
     </div>
   );
