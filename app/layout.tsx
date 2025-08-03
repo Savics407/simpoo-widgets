@@ -1,29 +1,36 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import "./global.css";
-import { SimpooProvider } from "@simpoobusiness/sdk";
-import "@simpoobusiness/sdk/dist/styles.css";
+import { Inter } from "next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  useEffect(() => {
+    // Inject Script
+    const script = document.createElement("script");
+    script.src = "https://unpkg.com/@simpoobusiness/sdk/dist/simpoo-sdk.js";
+    script.async = true;
+
+    script.onload = () => {
+      const sdk = (window as any).SimpooSDK;
+      if (sdk && sdk.init) {
+        sdk.init({ apiKey: "86a7a247-5289-475d-8deb-5df6f4b4f148" });
+        sdk.renderWidget("inventory", "#inventory-widget");
+      } else {
+        console.error("SimpooSDK failed to load or methods are missing");
+      }
+    };
+    document.body.appendChild(script);
+  }, []);
   return (
     <html>
-      <body>
-        <div id="fb-root"></div>
-        <script
-          async
-          defer
-          crossOrigin="anonymous"
-          src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v23.0&appId=1485523188599465"
-        ></script>
-        <SimpooProvider apiKey="86a7a247-5289-475d-8deb-5df6f4b4f148">
-          {children}
-        </SimpooProvider>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
