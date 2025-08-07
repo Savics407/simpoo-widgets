@@ -12,6 +12,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   useEffect(() => {
+    const apiValue = sessionStorage.getItem("apiKey");
     // Inject Script
     const script = document.createElement("script");
     script.src = "https://unpkg.com/@simpoobusiness/sdk/dist/simpoo-sdk.js";
@@ -20,7 +21,9 @@ export default function RootLayout({
     script.onload = () => {
       const sdk = (window as any).SimpooSDK;
       if (sdk && sdk.init) {
-        sdk.init({ apiKey: "86a7a247-5289-475d-8deb-5df6f4b4f148" });
+        sdk.init({
+          apiKey: apiValue || "86a7a247-5289-475d-8deb-5df6f4b4f148",
+        });
         sdk.renderWidget("inventory", "#inventory-widget");
       } else {
         console.error("SimpooSDK failed to load or methods are missing");
