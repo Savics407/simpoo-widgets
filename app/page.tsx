@@ -21,7 +21,7 @@ export default function Page() {
             className="border rounded-md px-2  cursor-pointer "
             onClick={() => {
               sessionStorage.setItem("apiKey", apiValue);
-              setApiValue("");
+              window.location.reload();
             }}
           >
             Enter

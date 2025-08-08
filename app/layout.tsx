@@ -22,7 +22,7 @@ export default function RootLayout({
       const sdk = (window as any).SimpooSDK;
       if (sdk && sdk.init) {
         sdk.init({
-          apiKey: apiValue || "86a7a247-5289-475d-8deb-5df6f4b4f148",
+          apiKey: apiValue || "20161753-01e5-4ada-9d4a-9016bd28ff99",
         });
         sdk.renderWidget("inventory", "#inventory-widget");
       } else {
