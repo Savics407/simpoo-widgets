@@ -23,6 +23,7 @@ export default function RootLayout({
       if (sdk && sdk.init) {
         sdk.init({
           apiKey: apiValue || "20161753-01e5-4ada-9d4a-9016bd28ff99",
+          env: "dev",
         });
         sdk.renderWidget("inventory", "#inventory-widget");
       } else {

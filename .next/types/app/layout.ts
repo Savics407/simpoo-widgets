@@ -1,4 +1,4 @@
-// File: C:\Users\SAVICS\Desktop\Web Dev\JiffyPay\embeddable sdks\next-app\app\layout.tsx
+// File: /Users/macpro/Desktop/projects/jiffypay/simpoo-widgets/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
